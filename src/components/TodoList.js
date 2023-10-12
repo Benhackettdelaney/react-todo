@@ -10,11 +10,11 @@ import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   let initialist = [
-    { id: 1, text: "Clean the office", done: true },
+    { id: 1, text: "do this", done: true },
 
-    { id: 2, text: "Eat ceral", done: false },
+    { id: 2, text: "Nah", done: false },
 
-    { id: 3, text: "Do React shtuff", done: false },
+    { id: 3, text: "Eggs", done: false },
   ];
 
   let localList = JSON.parse(localStorage.getItem(`todos`));
