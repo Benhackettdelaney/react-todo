@@ -1,12 +1,17 @@
 import Badge from "react-bootstrap/Badge";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 const TodoItem = (props) => {
-    
   let itemHTML = (
     <>
       {props.todo.text}
-      <Badge onClick={() => props.markAsDone(props.todo.id)} pill bg="success" className="float-end">
+      <Badge
+        onClick={() => props.markAsDone(props.todo.id)}
+        pill
+        bg="success"
+        className="float-end"
+      >
         &#10003;
       </Badge>
     </>
@@ -22,7 +27,17 @@ const TodoItem = (props) => {
 
   return (
     <>
-      <ListGroup.Item>{itemHTML}</ListGroup.Item>
+      <ListGroup.Item>
+        <Button
+          onClick={() => props.deleteToDo(props.todo.id)}
+          className="float-end"
+          variant="danger"
+          size="sm"
+        >
+          Delete
+        </Button>
+        {itemHTML}
+      </ListGroup.Item>
     </>
   );
 };
